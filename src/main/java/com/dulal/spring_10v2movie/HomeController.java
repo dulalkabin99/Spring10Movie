@@ -21,7 +21,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String movieList(Model model){
-        model.addAttribute("Movies", movieRepo.findAll());
+        model.addAttribute("movies", movieRepo.findAll());
         return "m_list";
     }
 
@@ -40,9 +40,9 @@ public class HomeController {
         return "redirect:/";
     }
 
-    @RequestMapping("/viewmovie{m_id}")
-  public String showMovie(@PathVariable("id") long m_id, Model model){
-      model.addAttribute("movie", movieRepo.findById(m_id));
+    @RequestMapping("/viewmovie/{m_id}")
+  public String showMovie(@PathVariable("m_id") long m_id, Model model){
+      model.addAttribute("movie", movieRepo.findById(m_id).get());
       return "view";
 
     }
@@ -60,6 +60,4 @@ public class HomeController {
       return "redirect:/";
 
   }
-
-
 }

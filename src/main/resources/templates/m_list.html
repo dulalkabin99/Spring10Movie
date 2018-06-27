@@ -11,26 +11,24 @@
 <table>
 
   <tr>
-    <th>Movie Title</th>
-    <th>Movie year</th>
-    <th> Movie genre</th>
-    <th>Movie description</th>
+    <th>Movie Title &nbsp  &nbsp</th>
+    <th>Movie year  &nbsp  &nbsp</th>
+    <th> Movie genre  &nbsp  &nbsp</th>
+    <th>Movie description  &nbsp  &nbsp</th>
     <td>Actions</td>
 
   </tr>
 
-  <tr th:each="movie : ${movies}">
+  <tr th:each="movie:${movies}">
     <td th:text="${movie.m_title}"></td>
-    <td th:text="${movie.m_desc}"></td>
-    <td th:int="${movie.m_year}"></td>
+    <td th:text="${movie.m_year}"></td>
     <td th:text="${movie.m_genre}"></td>
+    <td th:text="${movie.m_desc}"></td>
 
     <td>
-      <a href="@{/update/{m_id}(m_id=${movie.m_id})}"> Update Movie</a>
-      <a href="@{/viewmovie/{m_id}(m_id=${movie.m_id})}"> View Detail</a>
-      <a href="@{/delete/{m_id}(m_id=${movie.m_id})}">delete movie</a>
-
-
+      <a th:href="@{/update/{m_id} (m_id=${movie.m_id})}"> Update Movie &nbsp  &nbsp</a>
+      <a th:href="@{/viewmovie/{m_id} (m_id=${movie.m_id})}"> View Detail &nbsp  &nbsp</a>
+      <a th:href="@{/delete/{m_id} (m_id=${movie.m_id})}">delete movie &nbsp  &nbsp</a>
     </td>
 
 

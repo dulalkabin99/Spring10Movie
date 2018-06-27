@@ -12,11 +12,12 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Movie {
-    @Id@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long m_id;
 
     @NotNull
-    @Size (min=5)
+    @Size(min=5)
     private String m_title;
 
     @NotNull
