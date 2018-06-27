@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset=" UTF-8"/>
+    <title>Title</title>
+</head>
+
+<body>
+
+<a href="/">Show All Movies</a><br/>
+
+Title: <span th:text="${movie.m_title}"></span><br/>
+Description: <span th:text="${movie.m_desc}"></span><br/>
+Movie year: <span th:text="${movie.m_year}"></span><br/>
+Movie Genre: <span th:text="${movie.m_genre}"></span><br/>
+<a th:href="@{/delete/{m_id}(m_id=${movie.m_id})}">Delete This movie</a>
+
+
+
+</body>
+</html>
